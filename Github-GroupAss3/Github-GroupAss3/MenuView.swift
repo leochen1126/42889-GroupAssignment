@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MenuView: View {
+    @State private var isLoginViewPresented = false
+    
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -14,7 +16,8 @@ struct MenuView: View {
                     
                     Spacer()
                     Button("Login") {
-                        // Action for login button
+                        // Present the login view
+                        isLoginViewPresented.toggle()
                     }
                     .padding(.horizontal) // Reduce horizontal padding
                     .cornerRadius(8)
@@ -25,6 +28,10 @@ struct MenuView: View {
                     .foregroundStyle(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
                     .padding(.horizontal)
+                    .sheet(isPresented: $isLoginViewPresented) {
+                        // Present the login view as a modal sheet
+                        LoginView()
+                    }
                 }
                 .padding()
                 
@@ -33,7 +40,7 @@ struct MenuView: View {
                         Button(action: {
                             // Action for ticket link
                         }) {
-                            Text("Tickets")
+                            Text("Movie")
                                 .foregroundColor(.white)
                                 .padding()
                         }
@@ -43,7 +50,16 @@ struct MenuView: View {
                         Button(action: {
                             // Action for food link
                         }) {
-                            Text("Food")
+                            Text("Event")
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                        .background(Color.black)
+                        .cornerRadius(8)
+                        Button(action: {
+                            // Action for food link
+                        }) {
+                            Text("About us")
                                 .foregroundColor(.white)
                                 .padding()
                         }
@@ -70,6 +86,7 @@ struct MenuView: View {
                         }
                     }
                 }
+                
                 Spacer()
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem()]) {
@@ -81,7 +98,6 @@ struct MenuView: View {
                         }
                     }
                 }
-                
                 Spacer()
                 
             }
