@@ -1,4 +1,8 @@
 import Foundation
+import FirebaseCore
+import FirebaseFirestore
+
+
 
 class RegisterViewModel: ObservableObject {
     @Published var username = ""
@@ -53,7 +57,25 @@ class RegisterViewModel: ObservableObject {
         // Check if all fields are valid
         return isUsernameValid && isEmailValid && isPhoneNumberValid && isAddressValid && isPasswordValid && isConfirmPasswordValid
     }
-    func register(){
-        
+    func register() {
+        let db = Firestore.firestore()
+        let data: [String: Any] = [
+            "userName": username,
+            "address": address,
+            "phone": phoneNumber,
+            "email": email,
+            "password": password,
+            "admin": false
+        ]
+
+        db.collection("user_info").document("0002").setData(data) { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
+
+
 }
