@@ -20,8 +20,8 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.username) { _ in
-                            viewModel.isUsernameValid = viewModel.isValidUsername()
+                        .onChange(of: viewModel.username){
+                               viewModel.isUsernameValid = viewModel.isValidUsername()
                         }
                         .foregroundColor(viewModel.isUsernameValid ? .black : .red)
                     
@@ -30,7 +30,7 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.email) { _ in
+                        .onChange(of: viewModel.email) {
                             viewModel.isEmailValid = viewModel.isValidEmail()
                         }
                         .foregroundColor(viewModel.isEmailValid ? .black : .red)
@@ -40,7 +40,7 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.phoneNumber) { _ in
+                        .onChange(of: viewModel.phoneNumber) {
                             viewModel.isPhoneNumberValid = viewModel.isValidPhoneNumber()
                         }
                         .foregroundColor(viewModel.isPhoneNumberValid ? .black : .red)
@@ -50,7 +50,7 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.address) { _ in
+                        .onChange(of: viewModel.address) {
                             viewModel.isAddressValid = viewModel.isValidAddress()
                         }
                         .foregroundColor(viewModel.isAddressValid ? .black : .red)
@@ -60,7 +60,7 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.password) { _ in
+                        .onChange(of: viewModel.password) {
                             viewModel.isPasswordValid = viewModel.isValidPassword()
                         }
                         .foregroundColor(viewModel.isPasswordValid ? .black : .red)
@@ -70,20 +70,18 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal)
-                        .onChange(of: viewModel.confirmPassword) { _ in
+                        .onChange(of: viewModel.confirmPassword) {
                             viewModel.isConfirmPasswordValid = viewModel.isValidConfirmPassword()
                         }
                         .foregroundColor(viewModel.isConfirmPasswordValid ? .black : .red)
                     
-                    Button("Register") {
-                        // Add action to perform registration
-                    }
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                    .padding()
-                    .disabled(!viewModel.isFormValid())
+                    Button("Register", action:viewModel.register)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .padding()
+                        .disabled(!viewModel.isFormValid())
                 }
                 .padding()
                 .background(Color.gray.opacity(0.8))

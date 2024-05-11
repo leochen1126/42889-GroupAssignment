@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State private var isLoginViewPresented = false
-    
+    @State private var isAboutUsViewPresented = false
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -57,22 +57,30 @@ struct MenuView: View {
                         .background(Color.black)
                         .cornerRadius(8)
                         Button(action: {
-                            // Action for food link
+                            isAboutUsViewPresented.toggle()
                         }) {
                             Text("About us")
                                 .foregroundColor(.white)
                                 .padding()
+                                .sheet(isPresented: $isAboutUsViewPresented) {
+                                                AboutUsView()
+                                            }
                         }
-                        .background(Color.black)
-                        .cornerRadius(8)
                     }
                 } label: {
                     Spacer()
                     Image(systemName: "ellipsis")
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.black)
+                        .padding(.horizontal) // Reduce horizontal padding
                         .cornerRadius(8)
+                        .font(.headline)
+                        .frame(maxWidth:.infinity)
+                        .frame(height: 40)
+                        .background(.gray)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .padding(.horizontal)
                 }
                 .padding(.bottom) // Add bottom padding
                 

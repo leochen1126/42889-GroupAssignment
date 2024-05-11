@@ -11,6 +11,8 @@
 		AC385D542BED162B00BED627 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC385D532BED162B00BED627 /* LoginView.swift */; };
 		AC385D562BED192100BED627 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC385D552BED192100BED627 /* RegisterView.swift */; };
 		AC385D582BED1A0900BED627 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC385D572BED1A0900BED627 /* RegisterViewModel.swift */; };
+		AC385D5A2BEF31BF00BED627 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC385D592BEF31BF00BED627 /* AboutUsView.swift */; };
+		AC385D5C2BEF3EFD00BED627 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC385D5B2BEF3EFD00BED627 /* AboutUsViewModel.swift */; };
 		ACAABE582BE9DE3700680D38 /* Github_GroupAss3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE572BE9DE3700680D38 /* Github_GroupAss3App.swift */; };
 		ACAABE5A2BE9DE3700680D38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE592BE9DE3700680D38 /* ContentView.swift */; };
 		ACAABE5C2BE9DE3800680D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAABE5B2BE9DE3800680D38 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		AC385D532BED162B00BED627 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AC385D552BED192100BED627 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AC385D572BED1A0900BED627 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		AC385D592BEF31BF00BED627 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
+		AC385D5B2BEF3EFD00BED627 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
 		ACAABE542BE9DE3700680D38 /* Github-GroupAss3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github-GroupAss3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAABE572BE9DE3700680D38 /* Github_GroupAss3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_GroupAss3App.swift; sourceTree = "<group>"; };
 		ACAABE592BE9DE3700680D38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				AC385D532BED162B00BED627 /* LoginView.swift */,
 				AC385D552BED192100BED627 /* RegisterView.swift */,
 				AC385D572BED1A0900BED627 /* RegisterViewModel.swift */,
+				AC385D592BEF31BF00BED627 /* AboutUsView.swift */,
 			);
 			path = "Github-GroupAss3";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				ACAABE5E2BE9DE3800680D38 /* Preview Assets.xcassets */,
+				AC385D5B2BEF3EFD00BED627 /* AboutUsViewModel.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -269,12 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC385D5C2BEF3EFD00BED627 /* AboutUsViewModel.swift in Sources */,
 				ACAABE5A2BE9DE3700680D38 /* ContentView.swift in Sources */,
 				AC385D582BED1A0900BED627 /* RegisterViewModel.swift in Sources */,
 				AC385D562BED192100BED627 /* RegisterView.swift in Sources */,
 				AC385D522BECF9C400BED627 /* MenuView.swift in Sources */,
 				AC385D542BED162B00BED627 /* LoginView.swift in Sources */,
 				ACAABE582BE9DE3700680D38 /* Github_GroupAss3App.swift in Sources */,
+				AC385D5A2BEF31BF00BED627 /* AboutUsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

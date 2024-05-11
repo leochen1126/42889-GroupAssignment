@@ -53,4 +53,7 @@ class RegisterViewModel: ObservableObject {
         // Check if all fields are valid
         return isUsernameValid && isEmailValid && isPhoneNumberValid && isAddressValid && isPasswordValid && isConfirmPasswordValid
     }
+    func register(){
+        
+    }
 }
