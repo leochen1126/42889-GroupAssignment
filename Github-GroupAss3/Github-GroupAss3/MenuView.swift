@@ -5,6 +5,9 @@ import SwiftUI
 struct MenuView: View {
     @State private var isLoginViewPresented = false
     @State private var isAboutUsViewPresented = false
+    @State private var isProfileViewPresented = false
+    @ObservedObject var viewModel = MenuViewModel()
+    @ObservedObject var userModel = UserSettings.shared
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -17,9 +20,15 @@ struct MenuView: View {
                         .bold()
                     
                     Spacer()
-                    Button("Login") {
-                        // Present the login view
-                        isLoginViewPresented.toggle()
+                    Button(userModel.username) {
+                        // If the user is logged in, go to the profile view
+                        if userModel.username != "Login" {
+                            // Navigate to ProfileView
+                            isProfileViewPresented.toggle()
+                        } else {
+                            // Present the login view
+                            isLoginViewPresented.toggle()
+                        }
                     }
                     .padding(.horizontal) // Reduce horizontal padding
                     .cornerRadius(8)
@@ -33,6 +42,10 @@ struct MenuView: View {
                     .sheet(isPresented: $isLoginViewPresented) {
                         // Present the login view as a modal sheet
                         LoginView()
+                    }
+                    .sheet(isPresented: $isProfileViewPresented) {
+                        // Present the login view as a modal sheet
+                        ProfileView()
                     }
                 }
                 .padding()
@@ -111,6 +124,10 @@ struct MenuView: View {
                 Spacer()
                 
             }
+            
+        }
+        .onAppear {
+            
         }
     }
 }

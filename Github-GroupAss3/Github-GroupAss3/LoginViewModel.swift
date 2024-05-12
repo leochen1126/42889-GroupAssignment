@@ -1,7 +1,6 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
-import SwiftUI
 
 class LoginViewModel: ObservableObject {
     @Published var username = ""
@@ -13,6 +12,10 @@ class LoginViewModel: ObservableObject {
     
     // Add a closure to handle view dismissal
     var handleDismissal: (() -> Void)?
+        
+    // Add a closure to handle successful login
+    var handleSuccessfulLogin: ((String) -> Void)?
+        
     
     func login() {
         let usersRef = db.collection("user_info")
@@ -30,9 +33,12 @@ class LoginViewModel: ObservableObject {
                             print("Login successful")
                             DispatchQueue.main.async {
                                 self.loginSuccessful = true
+                                // Call the successful login handler
+                                self.handleSuccessfulLogin?(self.username)
                                 // Call the dismissal handler
                                 self.handleDismissal?()
                             }
+                            UserSettings.shared.username = self.username
                             return
                         } else {
                             print("Incorrect password")
