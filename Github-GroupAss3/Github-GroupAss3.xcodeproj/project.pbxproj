@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E6F2BF0AC1700FC1577 /* BookView.swift */; };
+		84EC5E722BF0ACAD00FC1577 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */; };
+		84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */; };
+		84EC5E762BF0B3E000FC1577 /* AfterBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E752BF0B3E000FC1577 /* AfterBookView.swift */; };
 		AC0016B22BF062170081B48E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0016B12BF062170081B48E /* ProfileView.swift */; };
 		AC0016B42BF08AA10081B48E /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0016B32BF08AA10081B48E /* MenuViewModel.swift */; };
 		AC0016B62BF08FCC0081B48E /* UserSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0016B52BF08FCC0081B48E /* UserSettingModel.swift */; };
@@ -58,6 +62,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84EC5E6F2BF0AC1700FC1577 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBookViewModel.swift; sourceTree = "<group>"; };
+		84EC5E752BF0B3E000FC1577 /* AfterBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBookView.swift; sourceTree = "<group>"; };
 		AC0016B12BF062170081B48E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AC0016B32BF08AA10081B48E /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		AC0016B52BF08FCC0081B48E /* UserSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingModel.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 				ACAABE5D2BE9DE3800680D38 /* Preview Content */,
 				AC385D512BECF9C400BED627 /* MenuView.swift */,
 				AC0016B32BF08AA10081B48E /* MenuViewModel.swift */,
+				84EC5E6F2BF0AC1700FC1577 /* BookView.swift */,
+				84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */,
+				84EC5E752BF0B3E000FC1577 /* AfterBookView.swift */,
+				84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */,
 				AC385D532BED162B00BED627 /* LoginView.swift */,
 				AC385D702BF0440600BED627 /* LoginViewModel.swift */,
 				AC385D552BED192100BED627 /* RegisterView.swift */,
@@ -341,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EC5E762BF0B3E000FC1577 /* AfterBookView.swift in Sources */,
 				AC385D5C2BEF3EFD00BED627 /* AboutUsViewModel.swift in Sources */,
 				ACAABE5A2BE9DE3700680D38 /* ContentView.swift in Sources */,
 				AC0016BA2BF096BA0081B48E /* ProfileEditView.swift in Sources */,
@@ -351,11 +364,14 @@
 				AC0016B42BF08AA10081B48E /* MenuViewModel.swift in Sources */,
 				AC385D522BECF9C400BED627 /* MenuView.swift in Sources */,
 				AC0016B62BF08FCC0081B48E /* UserSettingModel.swift in Sources */,
+				84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */,
+				84EC5E722BF0ACAD00FC1577 /* BookViewModel.swift in Sources */,
 				AC385D542BED162B00BED627 /* LoginView.swift in Sources */,
 				ACAABE582BE9DE3700680D38 /* Github_GroupAss3App.swift in Sources */,
 				AC0016B82BF0921D0081B48E /* ProfileViewModel.swift in Sources */,
 				AC385D5A2BEF31BF00BED627 /* AboutUsView.swift in Sources */,
 				AC385D712BF0440600BED627 /* LoginViewModel.swift in Sources */,
+				84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
