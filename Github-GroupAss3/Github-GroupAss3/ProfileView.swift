@@ -9,29 +9,29 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var viewModel = ProfileViewModel()
-    @ObservedObject var userModel = UserSettings.shared
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 VStack {
                     VStack {
-                        Text("Username")
+                        Text(viewModel.username)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                        Text("Email:")
+                        Text("Email:\(viewModel.email)")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                        Text("Address:")
+                        Text("Address:\(viewModel.address)")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                        Text("Phone:")
+                        Text("Phone:\(viewModel.phone)")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -41,19 +41,19 @@ struct ProfileView: View {
                         HStack {
                             Spacer()
                             
-                            NavigationLink(destination: RegisterView()) {
-                                Text("Edit my Profile")
+                            NavigationLink(destination: ProfileEditView()) {
+                                Text("Edit")
                                     .foregroundColor(.white)
                                     .padding()
                             }
                             .background(Color.blue)
                             .cornerRadius(8)
                             Spacer()
-                            NavigationLink(destination: RegisterView()) {
-                                Text("Logout")
+                            Button(action: viewModel.logout, label: {
+                                Text("LogOut")
                                     .foregroundColor(.white)
                                     .padding()
-                            }
+                            })
                             .background(Color.blue)
                             .cornerRadius(8)
                             
@@ -65,6 +65,13 @@ struct ProfileView: View {
                     .background(Color.gray.opacity(0.8))
                     .cornerRadius(16)
                     .padding()
+                }
+                .onAppear{
+                    viewModel.fetchUserDetails()
+                    // Set the dismissal handler
+                    viewModel.handleDismissal = {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
         }
