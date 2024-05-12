@@ -41,6 +41,7 @@ class ProfileViewModel: ObservableObject {
     }
     func logout(){
         UserSettings.shared.username = "Login"
+        UserSettings.shared.admin = false
         // Call the dismissal handler
         self.handleDismissal?()
     }

@@ -6,6 +6,7 @@ struct MenuView: View {
     @State private var isLoginViewPresented = false
     @State private var isAboutUsViewPresented = false
     @State private var isProfileViewPresented = false
+    @State private var isManageViewPresented = false
     @ObservedObject var viewModel = MenuViewModel()
     @ObservedObject var userModel = UserSettings.shared
     var body: some View {
@@ -20,6 +21,7 @@ struct MenuView: View {
                         .bold()
                     
                     Spacer()
+                    
                     Button(userModel.username) {
                         // If the user is logged in, go to the profile view
                         if userModel.username != "Login" {
@@ -46,6 +48,25 @@ struct MenuView: View {
                     .sheet(isPresented: $isProfileViewPresented) {
                         // Present the login view as a modal sheet
                         ProfileView()
+                    }
+                    if userModel.admin {
+                        Button("Manage") {
+                            // Action for Manage button
+                            isManageViewPresented.toggle()
+                        }
+                        .padding(.horizontal) // Reduce horizontal padding
+                        .cornerRadius(8)
+                        .font(.headline)
+                        .frame(maxWidth: 100)
+                        .frame(height: 40)
+                        .background(.gray)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        .padding(.horizontal)
+                        .sheet(isPresented: $isManageViewPresented) {
+                            // Present the manage view as a modal sheet
+                            //lead to ManageView()
+                        }
                     }
                 }
                 .padding()

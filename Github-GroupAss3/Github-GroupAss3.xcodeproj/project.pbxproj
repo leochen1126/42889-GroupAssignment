@@ -135,7 +135,6 @@
 		ACAABE4B2BE9DE3700680D38 = {
 			isa = PBXGroup;
 			children = (
-				AC0016B52BF08FCC0081B48E /* UserSettingModel.swift */,
 				ACAABE562BE9DE3700680D38 /* Github-GroupAss3 */,
 				ACAABE672BE9DE3800680D38 /* Github-GroupAss3Tests */,
 				ACAABE712BE9DE3800680D38 /* Github-GroupAss3UITests */,
@@ -177,6 +176,7 @@
 				AC0016B92BF096BA0081B48E /* ProfileEditView.swift */,
 				AC0016BB2BF096D40081B48E /* ProfileEditViewModel.swift */,
 				AC385D592BEF31BF00BED627 /* AboutUsView.swift */,
+				AC0016B52BF08FCC0081B48E /* UserSettingModel.swift */,
 			);
 			path = "Github-GroupAss3";
 			sourceTree = "<group>";

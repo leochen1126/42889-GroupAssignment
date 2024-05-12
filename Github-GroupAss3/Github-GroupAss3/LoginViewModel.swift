@@ -7,7 +7,6 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var loginSuccessful = false
     @Published var loginFailed = false
-    
     private var db = Firestore.firestore()
     
     // Add a closure to handle view dismissal
@@ -39,6 +38,10 @@ class LoginViewModel: ObservableObject {
                                 self.handleDismissal?()
                             }
                             UserSettings.shared.username = self.username
+                            if let storedAdmin = document.data()["admin"] as? Bool{
+                                UserSettings.shared.admin = storedAdmin
+                            }
+                            
                             return
                         } else {
                             print("Incorrect password")
