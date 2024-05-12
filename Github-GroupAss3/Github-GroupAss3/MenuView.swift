@@ -111,16 +111,50 @@ struct MenuView: View {
                 }
                 
                 Spacer()
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem()]) {
-                        // Your horizontal scrolling list content here
-                        ForEach(0..<20) { index in
-                            Text("Item \(index)")
-                                .foregroundColor(.white)
-                                .padding()
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: [GridItem(.fixed(300))]) {
+                        ForEach(viewModel.movies) { movie in
+                            VStack {
+                                // Title
+                                Text(movie.title)
+                                    .foregroundColor(.white)
+                                    .font(.body)
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.center)
+                                    .frame(width: 150)
+                                    .padding(.bottom, 5)
+
+                                // Asynchronously load the movie image from the URL
+                                AsyncImage(url: URL(string: movie.imageUrl)) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 150)
+                                        .cornerRadius(8)
+                                } placeholder: {
+                                    // Placeholder while loading
+                                    Rectangle()
+                                        .foregroundColor(.gray)
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 150)
+                                        .cornerRadius(8)
+                                }
+                                .padding(.bottom, 10)
+                                
+                                // Movie seat count
+                                Text("Seats left: \(movie.seatCount)")
+                                    .foregroundColor(.white)
+                                    .font(.body)
+                                    .padding(.bottom, 5)
+                            }
+                            .background(Color.black)
+                            .cornerRadius(8)
+                            .padding()
                         }
                     }
+                    .padding(.horizontal)
                 }
+
                 Spacer()
                 
             }
