@@ -13,13 +13,14 @@ class RegisterViewModel: ObservableObject {
     @Published var confirmPassword = ""
     
     // Validation states
-    @Published var isUsernameValid = true
-    @Published var isEmailValid = true
-    @Published var isPhoneNumberValid = true
-    @Published var isAddressValid = true
-    @Published var isPasswordValid = true
+    @Published var isUsernameValid = false
+    @Published var isEmailValid = false
+    @Published var isPhoneNumberValid = false
+    @Published var isAddressValid = false
+    @Published var isPasswordValid = false
     @Published var isConfirmPasswordValid = true
-    
+    @Published var showAlert = false
+    @Published var registrationSuccessful = false
     // Validation functions
     func isValidUsername() -> Bool {
         // Add your validation logic for username
@@ -59,6 +60,16 @@ class RegisterViewModel: ObservableObject {
     }
     func register() {
         let db = Firestore.firestore()
+        
+        // Get a reference to the "user_info" collection
+        let userCollection = db.collection("user_info")
+        
+        // Create a new document with an auto-generated ID
+        let newDocumentRef = userCollection.document()
+        
+        // Use the auto-generated ID as the document name
+        let documentID = newDocumentRef.documentID
+        
         let data: [String: Any] = [
             "userName": username,
             "address": address,
@@ -67,15 +78,16 @@ class RegisterViewModel: ObservableObject {
             "password": password,
             "admin": false
         ]
-
-        db.collection("user_info").document("0002").setData(data) { error in
+        showAlert = true
+        registrationSuccessful = true
+        // Set the data in the newly created document
+        newDocumentRef.setData(data) { error in
             if let error = error {
                 print("Error writing document: \(error)")
             } else {
-                print("Document successfully written!")
+                print("Document successfully written with ID: \(documentID)")
             }
         }
+        
     }
-
-
 }

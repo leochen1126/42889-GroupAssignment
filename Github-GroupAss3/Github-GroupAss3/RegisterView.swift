@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @ObservedObject var viewModel = RegisterViewModel()
-    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -75,13 +75,28 @@ struct RegisterView: View {
                         }
                         .foregroundColor(viewModel.isConfirmPasswordValid ? .black : .red)
                     
-                    Button("Register", action:viewModel.register)
+                    Button("Register", action: {
+                                viewModel.register()
+                                if viewModel.registrationSuccessful {
+                                    presentationMode.wrappedValue.dismiss() // Navigate back to the previous view
+                                }
+                    })
                         .padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .cornerRadius(8)
                         .padding()
                         .disabled(!viewModel.isFormValid())
+                        .alert(isPresented: $viewModel.showAlert) {
+                            Alert(
+                                title: Text("Registration Successful"),
+                                message: Text("You are now registered!"),
+                                dismissButton: .default(Text("OK")) {
+                                    // Navigate back to the previous page (e.g., using a presentation mode)
+                                    // You can customize this part based on your navigation setup
+                                }
+                            )
+                        }
                 }
                 .padding()
                 .background(Color.gray.opacity(0.8))

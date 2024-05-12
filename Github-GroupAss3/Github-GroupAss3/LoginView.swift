@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username = ""
-    @State private var password = ""
+    @ObservedObject var viewModel = LoginViewModel()
     
     var body: some View {
         NavigationView {
@@ -15,24 +14,28 @@ struct LoginView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                        TextField("Username", text: $username)
+                        TextField("Username", text: $viewModel.userName)
                             .padding()
                             .background(Color.white)
                             .cornerRadius(8)
                             .padding(.horizontal)
                         
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $viewModel.password)
                             .padding()
                             .background(Color.white)
                             .cornerRadius(8)
                             .padding(.horizontal)
-                        
-                        
-                        
                         HStack {
                             Spacer()
-                            Button(" Login  ") {
-                                // Add action to perform login
+                            Button("Login") {
+                                                    viewModel.login { success in
+                                                        if success {
+                                                            // Navigate to the next screen (e.g., home screen)
+                                                            // You can customize this part based on your navigation setup
+                                                        } else {
+                                                            // Show an error message (optional)
+                                                        }
+                                                    }
                             }
                             .padding()
                             .foregroundColor(.white)
