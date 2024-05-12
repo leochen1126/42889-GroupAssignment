@@ -2,7 +2,8 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -14,7 +15,7 @@ struct LoginView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                        TextField("Username", text: $viewModel.userName)
+                        TextField("Username", text: $viewModel.username)
                             .padding()
                             .background(Color.white)
                             .cornerRadius(8)
@@ -27,21 +28,20 @@ struct LoginView: View {
                             .padding(.horizontal)
                         HStack {
                             Spacer()
-                            Button("Login") {
-                                                    viewModel.login { success in
-                                                        if success {
-                                                            // Navigate to the next screen (e.g., home screen)
-                                                            // You can customize this part based on your navigation setup
-                                                        } else {
-                                                            // Show an error message (optional)
-                                                        }
-                                                    }
-                            }
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.blue)
-                            .cornerRadius(8)
-                            .padding()
+                                Button("Login") {
+                                    viewModel.login()
+                                }
+                                .alert(isPresented: $viewModel.loginSuccessful) {
+                                    Alert(title: Text("Success"), message: Text("Login successful!"), dismissButton: .default(Text("OK")) )
+                                }
+                                .alert(isPresented: $viewModel.loginFailed) {
+                                    Alert(title: Text("Failed"), message: Text("Login failed. Please try again."), dismissButton: .default(Text("OK")))
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                                .padding()
                             Spacer()
                             
                             NavigationLink(destination: RegisterView()) {
@@ -62,6 +62,12 @@ struct LoginView: View {
                     .padding()
                 }
             }
+        }
+        .onAppear {
+                    // Set the dismissal handler
+                    viewModel.handleDismissal = {
+                        presentationMode.wrappedValue.dismiss()
+                    }
         }
     }
 }
