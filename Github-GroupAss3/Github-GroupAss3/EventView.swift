@@ -4,9 +4,6 @@
 //
 //  Created by Myo Zaw Tun on 12/5/2024.
 //
-
-import SwiftUI
-
 import SwiftUI
 
 struct EventView: View {
