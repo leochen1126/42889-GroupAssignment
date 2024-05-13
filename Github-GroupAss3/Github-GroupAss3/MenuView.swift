@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct MenuView: View {
     @State private var isLoginViewPresented = false
     @State private var isEventViewPresented = false

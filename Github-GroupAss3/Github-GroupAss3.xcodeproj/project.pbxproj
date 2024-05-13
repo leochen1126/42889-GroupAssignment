@@ -42,6 +42,8 @@
 		ACAABE692BE9DE3800680D38 /* Github_GroupAss3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE682BE9DE3800680D38 /* Github_GroupAss3Tests.swift */; };
 		ACAABE732BE9DE3800680D38 /* Github_GroupAss3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE722BE9DE3800680D38 /* Github_GroupAss3UITests.swift */; };
 		ACAABE752BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE742BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift */; };
+		C99BD1DB2BF249EE00BDCF13 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DA2BF249EE00BDCF13 /* EventView.swift */; };
+		C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		ACAABE6E2BE9DE3800680D38 /* Github-GroupAss3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github-GroupAss3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAABE722BE9DE3800680D38 /* Github_GroupAss3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_GroupAss3UITests.swift; sourceTree = "<group>"; };
 		ACAABE742BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_GroupAss3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C99BD1DA2BF249EE00BDCF13 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewModel.swift; path = "Preview Content/EventViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				ACAABE5D2BE9DE3800680D38 /* Preview Content */,
 				AC385D512BECF9C400BED627 /* MenuView.swift */,
 				AC0016B32BF08AA10081B48E /* MenuViewModel.swift */,
+				C99BD1DA2BF249EE00BDCF13 /* EventView.swift */,
+				C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */,
 				84EC5E6F2BF0AC1700FC1577 /* BookView.swift */,
 				84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */,
 				84EC5E752BF0B3E000FC1577 /* AfterBookView.swift */,
@@ -372,6 +378,8 @@
 				AC385D5A2BEF31BF00BED627 /* AboutUsView.swift in Sources */,
 				AC385D712BF0440600BED627 /* LoginViewModel.swift in Sources */,
 				84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */,
+				C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */,
+				C99BD1DB2BF249EE00BDCF13 /* EventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
