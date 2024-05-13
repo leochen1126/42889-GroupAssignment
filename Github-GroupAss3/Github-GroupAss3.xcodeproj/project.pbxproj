@@ -44,6 +44,8 @@
 		ACAABE752BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAABE742BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift */; };
 		C99BD1DB2BF249EE00BDCF13 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DA2BF249EE00BDCF13 /* EventView.swift */; };
 		C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */; };
+		C99BD1DF2BF2546300BDCF13 /* MovieInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DE2BF2546300BDCF13 /* MovieInfoViewModel.swift */; };
+		C99BD1E12BF254AF00BDCF13 /* MovieInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1E02BF254AF00BDCF13 /* MovieInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		ACAABE742BE9DE3800680D38 /* Github_GroupAss3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_GroupAss3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C99BD1DA2BF249EE00BDCF13 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewModel.swift; path = "Preview Content/EventViewModel.swift"; sourceTree = "<group>"; };
+		C99BD1DE2BF2546300BDCF13 /* MovieInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewModel.swift; sourceTree = "<group>"; };
+		C99BD1E02BF254AF00BDCF13 /* MovieInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				ACAABE5D2BE9DE3800680D38 /* Preview Content */,
 				AC385D512BECF9C400BED627 /* MenuView.swift */,
 				AC0016B32BF08AA10081B48E /* MenuViewModel.swift */,
+				C99BD1E02BF254AF00BDCF13 /* MovieInfoView.swift */,
+				C99BD1DE2BF2546300BDCF13 /* MovieInfoViewModel.swift */,
 				C99BD1DA2BF249EE00BDCF13 /* EventView.swift */,
 				C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */,
 				84EC5E6F2BF0AC1700FC1577 /* BookView.swift */,
@@ -362,6 +368,7 @@
 				84EC5E762BF0B3E000FC1577 /* AfterBookView.swift in Sources */,
 				AC385D5C2BEF3EFD00BED627 /* AboutUsViewModel.swift in Sources */,
 				ACAABE5A2BE9DE3700680D38 /* ContentView.swift in Sources */,
+				C99BD1DF2BF2546300BDCF13 /* MovieInfoViewModel.swift in Sources */,
 				AC0016BA2BF096BA0081B48E /* ProfileEditView.swift in Sources */,
 				AC0016B22BF062170081B48E /* ProfileView.swift in Sources */,
 				AC385D582BED1A0900BED627 /* RegisterViewModel.swift in Sources */,
@@ -372,6 +379,7 @@
 				AC0016B62BF08FCC0081B48E /* UserSettingModel.swift in Sources */,
 				84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */,
 				84EC5E722BF0ACAD00FC1577 /* BookViewModel.swift in Sources */,
+				C99BD1E12BF254AF00BDCF13 /* MovieInfoView.swift in Sources */,
 				AC385D542BED162B00BED627 /* LoginView.swift in Sources */,
 				ACAABE582BE9DE3700680D38 /* Github_GroupAss3App.swift in Sources */,
 				AC0016B82BF0921D0081B48E /* ProfileViewModel.swift in Sources */,

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State private var isLoginViewPresented = false
+    @State private var isMovieInfoViewPresented = false
     @State private var isEventViewPresented = false
     @State private var isAboutUsViewPresented = false
     @State private var isProfileViewPresented = false
@@ -73,7 +74,7 @@ struct MenuView: View {
                 DisclosureGroup {
                     VStack {
                         Button(action: {
-                            // Action for ticket link
+                            isMovieInfoViewPresented.toggle()
                         }) {
                             Text("Movie")
                                 .foregroundColor(.white)
@@ -81,6 +82,9 @@ struct MenuView: View {
                         }
                         .background(Color.black)
                         .cornerRadius(8)
+                        .sheet(isPresented: $isMovieInfoViewPresented) {
+                                        //MovieInfoView()
+                                    }
                         
                         Button(action: {
                             isEventViewPresented.toggle()
@@ -122,18 +126,6 @@ struct MenuView: View {
                 }
                 .padding(.bottom) // Add bottom padding
                 
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem()]) {
-                        // Your horizontal scrolling list content here
-                        ForEach(0..<20) { index in
-                            Text("Item \(index)")
-                                .foregroundColor(.white)
-                                .padding()
-                        }
-                    }
-                }
-                
-                Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.fixed(300))]) {
                         ForEach(viewModel.movies) { movie in

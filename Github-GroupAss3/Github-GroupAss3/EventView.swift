@@ -31,6 +31,7 @@ struct EventView: View {
             .font(.largeTitle)
             .foregroundColor(.white)
             .bold()
+            .padding(.top, 50)
     }
 
     private var eventsScrollView: some View {
