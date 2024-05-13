@@ -7,17 +7,19 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct EventView: View {
     let events: [Event] = [
-        Event(id: 0, title: "Kingdom of the Planet of the Apes", description: "Join the current hype about the third movie in the franchise of the Planet of the Apes. Program also contains the display of life-life models and the merchandise sales.", imageUrl: URL(string: "https://variety.com/wp-content/uploads/2024/05/GF1_0890.jpg")!),
-        Event(id: 1, title: "Dune: Part Two", description: "Get transported to another galaxy and witness an epic tale that spans several galactic civilizations. Members can enjoy the immersive experience programs.", imageUrl: URL(string: "https://midwesttheater.com/wp-content/uploads/2024/03/WEB-Dune-2.jpg")!)
+        Event(id: 0, title: "Kingdom of the Planet of the Apes", description: "Join the current hype about the third movie in the franchise of the Planet of the Apes. Program also contains the display of life-life models and the merchandise sales.", imageName: "event_apes"),
+        Event(id: 1, title: "Dune: Part Two", description: "Get transported to another galaxy and witness an epic tale that spans several galactic civilizations. Members can enjoy the immersive experience programs.", imageName: "event_dune"),
+        Event(id: 2, title: "Spy x Family Code: White", description: "Breakthrough comic book adaptation is back with an all-new story. Take a chance to win comic books for free just by watching the movie at our cinemas.", imageName: "event_spy")
     ]
 
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
-                padding()
                 titleText
                 eventsScrollView
             }
@@ -44,35 +46,22 @@ struct EventView: View {
 
     private func eventCard(event: Event) -> some View {
         VStack {
-            AsyncImage(url: event.imageUrl) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image.resizable()
-                         .aspectRatio(contentMode: .fill)
-                         .frame(width: 200, height: 200)
-                         .cornerRadius(10)
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .overlay(
-                Text("Event \(event.id + 1)")
-                    .font(.caption)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(6)
-                    .background(Color.black.opacity(0.7))
-                    .cornerRadius(5)
-                    .padding(10),
-                alignment: .topLeading
-            )
+            Image(event.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 200, height: 200)
+                .cornerRadius(10)
+                .overlay(
+                    Text("Event \(event.id + 1)")
+                        .font(.caption)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(6)
+                        .background(Color.black.opacity(0.7))
+                        .cornerRadius(5)
+                        .padding(10),
+                    alignment: .topLeading
+                )
 
             Text(event.title)
                 .foregroundColor(.white)
@@ -98,4 +87,5 @@ struct EventView_Previews: PreviewProvider {
         EventView()
     }
 }
+
 

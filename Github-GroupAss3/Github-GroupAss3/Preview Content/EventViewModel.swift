@@ -11,5 +11,6 @@ struct Event {
     var id: Int
     var title: String
     var description: String
-    var imageUrl: URL
+    var imageName: String  
 }
+
