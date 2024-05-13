@@ -1,3 +1,9 @@
+//
+//  LoginViewModel.swift
+//  Github-GroupAss3
+//
+//  Created by Ming-You Chen on 9/5/2024.
+//
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
@@ -18,7 +24,6 @@ class LoginViewModel: ObservableObject {
     
     func login() {
         let usersRef = db.collection("user_info")
-        
         usersRef.whereField("userName", isEqualTo: self.username).getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")

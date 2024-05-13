@@ -2,36 +2,47 @@
 //  AboutUsView.swift
 //  Github-GroupAss3
 //
-//  Created by Ming-You Chen on 11/5/2024.
+//  Created by Ming-You Chen on 9/5/2024.
 //
-
 import SwiftUI
 import MapKit
+
 struct AboutUsView: View {
     let utsBuilding2Coordinate = CLLocationCoordinate2D(latitude: -33.8836, longitude: 151.1982)
+
     var body: some View {
-        ZStack{
+        ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
-                MapView(coordinate: utsBuilding2Coordinate)
-                    .frame(height: 350) // Adjust the map height as needed
-                    .padding()
-                    .clipShape(Rectangle())
-                
-                Text("CTS")
-                    .font(.largeTitle)
-                    .foregroundStyle(.white)
-                    .padding()
-                    .bold()
-                
-                Text("15 Broadway, Ultimo, Sydney, NSW 2007")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .padding()
+                mapView
+                titleText
+                addressText
                 Spacer()
             }
         }
+    }
+
+    private var mapView: some View {
+        MapView(coordinate: utsBuilding2Coordinate)
+            .frame(height: 350) // Adjust the map height as needed
+            .padding()
+            .clipShape(Rectangle())
+    }
+
+    private var titleText: some View {
+        Text("CTS")
+            .font(.largeTitle)
+            .foregroundStyle(.white)
+            .padding()
+            .bold()
+    }
+
+    private var addressText: some View {
+        Text("15 Broadway, Ultimo, Sydney, NSW 2007")
+            .font(.subheadline)
+            .foregroundColor(.gray)
+            .padding()
     }
 }
 
