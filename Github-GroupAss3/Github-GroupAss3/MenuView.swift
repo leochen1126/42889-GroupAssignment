@@ -4,6 +4,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State private var isLoginViewPresented = false
+    @State private var isEventViewPresented = false
     @State private var isAboutUsViewPresented = false
     @State private var isProfileViewPresented = false
     @State private var isManageViewPresented = false
@@ -84,11 +85,14 @@ struct MenuView: View {
                         .cornerRadius(8)
                         
                         Button(action: {
-                            // Action for food link
+                            isEventViewPresented.toggle()
                         }) {
                             Text("Event")
                                 .foregroundColor(.white)
                                 .padding()
+                                .sheet(isPresented: $isEventViewPresented) {
+                                                EventView()
+                                            }
                         }
                         .background(Color.black)
                         .cornerRadius(8)
