@@ -80,12 +80,17 @@ struct MenuView: View {
                                 Text("Movie")
                                     .foregroundColor(.white)
                                     .padding()
-                                    .sheet(isPresented: $isMovieInfoViewPresented) {
-                                        
-                                    }
                             }
                             .background(Color.black)
                             .cornerRadius(8)
+                            .sheet(isPresented: $isMovieInfoViewPresented) {
+                                if let firstMovie = viewModel.movies.first {
+                                    MovieInfoView(viewModel: MovieInfoViewModel(movie: firstMovie))
+                                } else {
+                                    Text("No movies available")
+                                        .foregroundColor(.white)
+                                }
+                            }
                             
                             Button(action: {
                                 isEventViewPresented.toggle()
