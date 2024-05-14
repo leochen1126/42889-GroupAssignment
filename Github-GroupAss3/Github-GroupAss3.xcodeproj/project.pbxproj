@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CFD70F02BF29E4F003C2D3D /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD70EF2BF29E4F003C2D3D /* SeatsView.swift */; };
+		2CFD70F22BF29E62003C2D3D /* SeatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD70F12BF29E62003C2D3D /* SeatsViewModel.swift */; };
 		84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E6F2BF0AC1700FC1577 /* BookView.swift */; };
 		84EC5E722BF0ACAD00FC1577 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */; };
 		84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CFD70EF2BF29E4F003C2D3D /* SeatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
+		2CFD70F12BF29E62003C2D3D /* SeatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewModel.swift; sourceTree = "<group>"; };
 		84EC5E6F2BF0AC1700FC1577 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBookViewModel.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				84EC5E712BF0ACAD00FC1577 /* BookViewModel.swift */,
 				84EC5E752BF0B3E000FC1577 /* AfterBookView.swift */,
 				84EC5E732BF0B3C700FC1577 /* AfterBookViewModel.swift */,
+				2CFD70EF2BF29E4F003C2D3D /* SeatsView.swift */,
+				2CFD70F12BF29E62003C2D3D /* SeatsViewModel.swift */,
 				AC385D532BED162B00BED627 /* LoginView.swift */,
 				AC385D702BF0440600BED627 /* LoginViewModel.swift */,
 				AC385D552BED192100BED627 /* RegisterView.swift */,
@@ -375,6 +381,7 @@
 				AC0016BC2BF096D40081B48E /* ProfileEditViewModel.swift in Sources */,
 				AC385D562BED192100BED627 /* RegisterView.swift in Sources */,
 				AC0016B42BF08AA10081B48E /* MenuViewModel.swift in Sources */,
+				2CFD70F22BF29E62003C2D3D /* SeatsViewModel.swift in Sources */,
 				AC385D522BECF9C400BED627 /* MenuView.swift in Sources */,
 				AC0016B62BF08FCC0081B48E /* UserSettingModel.swift in Sources */,
 				84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */,
@@ -384,6 +391,7 @@
 				ACAABE582BE9DE3700680D38 /* Github_GroupAss3App.swift in Sources */,
 				AC0016B82BF0921D0081B48E /* ProfileViewModel.swift in Sources */,
 				AC385D5A2BEF31BF00BED627 /* AboutUsView.swift in Sources */,
+				2CFD70F02BF29E4F003C2D3D /* SeatsView.swift in Sources */,
 				AC385D712BF0440600BED627 /* LoginViewModel.swift in Sources */,
 				84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */,
 				C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */,

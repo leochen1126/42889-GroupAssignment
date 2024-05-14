@@ -3,10 +3,14 @@
 //  Github-GroupAss3
 //
 //  Created by Gandi on 12/5/2024.
+//  Edited by Anna Huang on 13/5/2024 for seats.
 //
 import SwiftUI
 
 struct AfterBookView: View {
+    init(viewModel: AfterBookViewModel) {
+        self.viewModel = viewModel
+    } //seats
     @ObservedObject var viewModel: AfterBookViewModel
     @State private var firstName: String = ""
     @State private var lastName: String = ""
@@ -14,6 +18,8 @@ struct AfterBookView: View {
     @State private var isShowingActionSheet = false
     @Environment(\.presentationMode) var presentationMode
 
+    private var seatsViewModel = SeatsViewModel()   //seats
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -22,6 +28,7 @@ struct AfterBookView: View {
                     .font(.title)
                     .padding()
 
+                SeatsView(viewModel: seatsViewModel)    //seats
                 TextField("First Name", text: $firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()

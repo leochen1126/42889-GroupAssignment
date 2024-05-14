@@ -4,6 +4,7 @@
 //
 //  Created by Myo Zaw Tun on 12/5/2024.
 //
+
 import SwiftUI
 
 struct MovieInfoView: View {
