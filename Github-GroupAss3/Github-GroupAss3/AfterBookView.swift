@@ -3,7 +3,7 @@
 //  Github-GroupAss3
 //
 //  Created by Gandi on 12/5/2024.
-//  Edited by Anna Huang on 13/5/2024 for seats.
+//  Edited by Anna Huang on 13/5/2024 for seats selection and no payment.
 //
 import SwiftUI
 
@@ -14,6 +14,7 @@ struct AfterBookView: View {
     @ObservedObject var viewModel: AfterBookViewModel
     @State private var firstName: String = ""
     @State private var lastName: String = ""
+    @State private var phone: String = ""
     @State private var email: String = ""
     @State private var isShowingActionSheet = false
     @Environment(\.presentationMode) var presentationMode
@@ -37,6 +38,10 @@ struct AfterBookView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
+                TextField("Phone", text: $phone)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
                 TextField("Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -45,19 +50,20 @@ struct AfterBookView: View {
                     // Show success action sheet
                     isShowingActionSheet = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        seatsViewModel.confirmBooking() //seats
                         // Upload booking details to database
                         viewModel.uploadBookingDetails(firstName: firstName, lastName: lastName, email: email, movieTitle: viewModel.movieTitle)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }) {
-                    Text("Pay Now")
+                    Text("Book Now") //booking only
                 }
                 .padding()
 
                 Spacer()
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
-            .navigationBarTitle("Pay \(viewModel.movieTitle)", displayMode: .inline)
+            .navigationBarTitle("Book \(viewModel.movieTitle)", displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {

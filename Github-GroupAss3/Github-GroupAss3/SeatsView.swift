@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct SeatButton: View {
+    let seat: Seat
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text("\(seat.row)\(seat.number)")
+                .frame(width: 30, height: 30)
+                .background(seat.isOccupied ? Color.gray : Color.green)
+                .cornerRadius(5)
+                .foregroundColor(.white)
+        }
+    }
+}
+
 struct SeatsView: View {
     @ObservedObject var viewModel: SeatsViewModel
 
@@ -22,22 +36,18 @@ struct SeatsView: View {
                 Spacer()
                     .frame(height: 30)
                 
-                ForEach(["A", "B", "C", "D", "E"], id: \.self) { rowString in
-                    let rowChar = rowString.first!
+                ForEach(["A", "B", "C", "D", "E"], id: \.self) { row in
                     HStack(spacing: 10) {
                         ForEach(1...10, id: \.self) { number in
-                            Button(action: {
-                                let seat = Seat(row: rowChar, number: number, isOccupied: false, isSelected: false)
-                                viewModel.selectSeat(seat)
-                            }) {
-                                Text("\(rowString)\(number)")
-                                    .frame(width: 30, height: 30)
-                                    .background(colorForSeat(row: rowChar, number: number))
-                                    .cornerRadius(5)
+                            if let seat = viewModel.seats.first(where: { $0.row == Character(row) && $0.number == number }) {
+                                SeatButton(seat: seat) {
+                                    viewModel.selectSeat(seat)
+                                }
                             }
                         }
                     }
                 }
+                
                 Text("Maximum 6 seats per booking")
                     .padding()
                     .foregroundColor(viewModel.selectedSeatsCount > 6 ? .red : .white)
@@ -48,7 +58,6 @@ struct SeatsView: View {
         .foregroundColor(.white)
     }
 
-    
     private func colorForSeat(row: Character, number: Int) -> Color {
         if let seat = viewModel.seats.first(where: { $0.row == row && $0.number == number }) {
             if seat.isOccupied {
