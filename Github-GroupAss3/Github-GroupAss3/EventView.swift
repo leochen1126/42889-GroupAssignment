@@ -8,9 +8,9 @@ import SwiftUI
 
 struct EventView: View {
     let events: [Event] = [
-        Event(id: 0, title: "Kingdom of the Planet of the Apes", description: "Join the current hype about the third movie in the franchise of the Planet of the Apes. Program also contains the display of life-life models and the merchandise sales.", imageName: "event_apes"),
-        Event(id: 1, title: "Dune: Part Two", description: "Get transported to another galaxy and witness an epic tale that spans several galactic civilizations. Members can enjoy the immersive experience programs.", imageName: "event_dune"),
-        Event(id: 2, title: "Spy x Family Code: White", description: "Breakthrough comic book adaptation is back with an all-new story. Take a chance to win comic books for free just by watching the movie at our cinemas.", imageName: "event_spy")
+        Event(id: 0, title: "Firsttimer Specials", description: "If you are arriving to the event first, you'll be considered for valuable perks.", imageName: "event_firsttime"),
+        Event(id: 1, title: "Lucky Draw", description: "The lucky draws may contain tickets to other movies and promotional items.", imageName: "event_luck"),
+        Event(id: 2, title: "Come in with Buddies", description: "The more the merrier. Join us in groups and be considered for a better seating", imageName: "event_buddy")
     ]
 
     var body: some View {

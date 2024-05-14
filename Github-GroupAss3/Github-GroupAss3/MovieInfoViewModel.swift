@@ -7,10 +7,27 @@
 
 import Foundation
 
-class MovieInfoViewModel: ObservableObject {
-    @Published var omdbMovies: [String: OMDBMovie] = [:]
+struct OMDBMovie: Codable {
+    let plot: String
+    let imdbRating: String
+    let poster: String
     
-    func fetchOMDBDetails(for movie: Movie) {
+    enum CodingKeys: String, CodingKey {
+        case plot = "Plot"
+        case imdbRating = "imdbRating"
+        case poster = "Poster"
+    }
+}
+
+class MovieInfoViewModel: ObservableObject {
+    @Published var movie: Movie
+    @Published var omdbMovie: OMDBMovie?
+    
+    init(movie: Movie) {
+        self.movie = movie
+    }
+    
+    func fetchOMDBDetails() {
         guard let encodedTitle = movie.title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&apikey=6f79e75f") else {
             return
@@ -35,7 +52,7 @@ class MovieInfoViewModel: ObservableObject {
             do {
                 let decodedResponse = try JSONDecoder().decode(OMDBMovie.self, from: data)
                 DispatchQueue.main.async {
-                    self.omdbMovies[movie.id] = decodedResponse
+                    self.omdbMovie = decodedResponse
                 }
             } catch {
                 print("Error decoding data: \(error)")
@@ -45,3 +62,4 @@ class MovieInfoViewModel: ObservableObject {
         task.resume()
     }
 }
+

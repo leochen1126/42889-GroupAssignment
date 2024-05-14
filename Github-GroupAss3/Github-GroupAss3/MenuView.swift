@@ -80,12 +80,12 @@ struct MenuView: View {
                                 Text("Movie")
                                     .foregroundColor(.white)
                                     .padding()
+                                    .sheet(isPresented: $isMovieInfoViewPresented) {
+                                        
+                                    }
                             }
                             .background(Color.black)
                             .cornerRadius(8)
-                            .sheet(isPresented: $isMovieInfoViewPresented) {
-                                //MovieInfoView()
-                            }
                             
                             Button(action: {
                                 isEventViewPresented.toggle()
