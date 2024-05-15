@@ -1,3 +1,9 @@
+//
+//  RegisterViewModel.swift
+//  Github-GroupAss3
+//
+//  Created by Ming-You Chen on 9/5/2024.
+//
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
@@ -23,7 +29,6 @@ class RegisterViewModel: ObservableObject {
     @Published var registrationSuccessful = false
     // Validation functions
     func isValidUsername() -> Bool {
-        // Add your validation logic for username
         return !username.isEmpty
     }
     
@@ -35,22 +40,18 @@ class RegisterViewModel: ObservableObject {
     }
     
     func isValidPhoneNumber() -> Bool {
-        // Add your validation logic for phone number
         return phoneNumber.count >= 7
     }
     
     func isValidAddress() -> Bool {
-        // Add your validation logic for address
         return !address.isEmpty
     }
     
     func isValidPassword() -> Bool {
-        // Add your validation logic for password
         return password.count >= 6
     }
     
     func isValidConfirmPassword() -> Bool {
-        // Add your validation logic for confirm password
         return confirmPassword == password
     }
     
@@ -64,7 +65,7 @@ class RegisterViewModel: ObservableObject {
         // Get a reference to the "user_info" collection
         let userCollection = db.collection("user_info")
         
-        // Create a new document with an auto-generated ID
+        // create a new document with an auto-generated ID
         let newDocumentRef = userCollection.document()
         
         // Use the auto-generated ID as the document name

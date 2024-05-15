@@ -2,7 +2,7 @@
 //  ProfileViewModel.swift
 //  Github-GroupAss3
 //
-//  Created by Ming-You Chen on 9/5/2024.
+//  Created by Ming-You Chen on 10/5/2024.
 //
 
 
@@ -31,7 +31,7 @@ class ProfileViewModel: ObservableObject {
                 print("Error getting documents: \(error)")
                 self.loginFailed = true
             } else {
-                for document in querySnapshot!.documents {
+                for document in querySnapshot!.documents {//getting user info from db
                     self.email = document.get("email") as? String ?? ""
                     self.address = document.get("address") as? String ?? ""
                     self.phone = document.get("phone") as? String ?? ""
@@ -39,7 +39,7 @@ class ProfileViewModel: ObservableObject {
             }
         }
     }
-    func logout(){
+    func logout(){//Erase session data
         UserSettings.shared.username = "Login"
         UserSettings.shared.admin = false
         // Call the dismissal handler

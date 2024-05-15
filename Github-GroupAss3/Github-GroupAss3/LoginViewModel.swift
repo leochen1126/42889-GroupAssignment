@@ -17,17 +17,15 @@ class LoginViewModel: ObservableObject {
     
     // Add a closure to handle view dismissal
     var handleDismissal: (() -> Void)?
-        
     // Add a closure to handle successful login
     var handleSuccessfulLogin: ((String) -> Void)?
         
-    
     func login() {
-        let usersRef = db.collection("user_info")
+        let usersRef = db.collection("user_info")// grab data from user database
         usersRef.whereField("userName", isEqualTo: self.username).getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
-                DispatchQueue.main.async {
+                DispatchQueue.main.async {// trigger error messege
                     self.loginFailed = true
                 }
             } else {
@@ -42,15 +40,15 @@ class LoginViewModel: ObservableObject {
                                 // Call the dismissal handler
                                 self.handleDismissal?()
                             }
-                            UserSettings.shared.username = self.username
+                            UserSettings.shared.username = self.username // assign user name as session data
                             if let storedAdmin = document.data()["admin"] as? Bool{
-                                UserSettings.shared.admin = storedAdmin
+                                UserSettings.shared.admin = storedAdmin // make sure entering admin mode or not
                             }
                             
                             return
                         } else {
                             print("Incorrect password")
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.async { // trigger error messege
                                 self.loginFailed = true
                             }
                             return
