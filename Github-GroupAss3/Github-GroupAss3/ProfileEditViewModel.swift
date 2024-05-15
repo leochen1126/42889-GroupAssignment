@@ -2,14 +2,12 @@
 //  ProfileEditViewModel.swift
 //  Github-GroupAss3
 //
-//  Created by Ming-You Chen on 12/5/2024.
+//  Created by Ming-You Chen on 11/5/2024.
 //
 
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
-
-
 
 class ProfileEditViewModel: ObservableObject {
     @Published var username = UserSettings.shared.username
@@ -26,7 +24,6 @@ class ProfileEditViewModel: ObservableObject {
     @Published var updateSuccessful = false
     // Validation functions
     func isValidUsername() -> Bool {
-        // Add your validation logic for username
         return !username.isEmpty
     }
     
@@ -38,17 +35,14 @@ class ProfileEditViewModel: ObservableObject {
     }
     
     func isValidPhoneNumber() -> Bool {
-        // Add your validation logic for phone number
         return phoneNumber.count >= 7
     }
     
     func isValidAddress() -> Bool {
-        // Add your validation logic for address
         return !address.isEmpty
     }
     
     func isFormValid() -> Bool {
-        // Check if all fields are valid
         return isEmailValid && isPhoneNumberValid && isAddressValid
     }
     func update() {
@@ -59,7 +53,7 @@ class ProfileEditViewModel: ObservableObject {
             // Get a reference to the "user_info" collection
             let userCollection = db.collection("user_info")
             
-            // Create a dictionary with the user's data
+            // create a dictionary with the user's data
             let userData: [String: Any] = [
                 "userName": username,
                 "email": email,
