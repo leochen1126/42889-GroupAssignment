@@ -14,13 +14,12 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
                 VStack {
                     profileDetails
                     actionButtons
                 }
                 .padding()
-                .background(Color.gray.opacity(0.8))
                 .cornerRadius(16)
                 .padding()
             }
@@ -63,11 +62,11 @@ struct ProfileView: View {
             Spacer()
             //Go to edit personall data
             NavigationLink(destination: ProfileEditView()) {
-                Text("Edit")
+                Text("Edit     ")
                     .foregroundColor(.white)
                     .padding()
             }
-            .background(Color.blue)
+            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
             .cornerRadius(8)
             Spacer()
             Button(action: viewModel.logout) {//Erase session data
@@ -75,7 +74,7 @@ struct ProfileView: View {
                     .foregroundColor(.white)
                     .padding()
             }
-            .background(Color.blue)
+            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
             .cornerRadius(8)
             Spacer()
         }

@@ -12,7 +12,7 @@ struct AboutUsView: View {
 
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+            Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
                 mapView

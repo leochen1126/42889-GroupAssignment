@@ -13,14 +13,14 @@ struct ProfileEditView: View {
     
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+            Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
             VStack {
                 updateHeader
                 inputFields
                 updateButton
             }
             .padding()
-            .background(Color.gray.opacity(0.8))
+            .background(Color(red: 38/255, green: 33/255, blue: 52/255).opacity(0.8))
             .cornerRadius(16)
             .padding()
         }
@@ -77,7 +77,7 @@ struct ProfileEditView: View {
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.blue)
+        .background(Color(red: 237/255, green: 49/255, blue: 140/255))
         .cornerRadius(8)
         .padding()
         .disabled(!viewModel.isFormValid())

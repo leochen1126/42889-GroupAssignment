@@ -12,7 +12,7 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
                 VStack {
                     HStack {
                         Text("CTS")
@@ -38,7 +38,7 @@ struct MenuView: View {
                         .font(.headline)
                         .frame(maxWidth: 100)
                         .frame(height: 40)
-                        .background(.gray)
+                        .background(Color(red: 237/255, green: 49/255, blue: 140/255))
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                         .padding(.horizontal)
@@ -58,9 +58,9 @@ struct MenuView: View {
                             .padding(.horizontal) // Reduce horizontal padding
                             .cornerRadius(8)
                             .font(.headline)
-                            .frame(maxWidth: 100)
+                            .frame(maxWidth: 200)
                             .frame(height: 40)
-                            .background(.gray)
+                            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
                             .foregroundStyle(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                             .padding(.horizontal)
@@ -81,7 +81,6 @@ struct MenuView: View {
                                     .foregroundColor(.white)
                                     .padding()
                             }
-                            .background(Color.black)
                             .cornerRadius(8)
                             .sheet(isPresented: $isMovieInfoViewPresented) {
                                 if let firstMovie = viewModel.movies.first {
@@ -102,7 +101,6 @@ struct MenuView: View {
                                         EventView()
                                     }
                             }
-                            .background(Color.black)
                             .cornerRadius(8)
                             Button(action: {
                                 isAboutUsViewPresented.toggle()
@@ -117,7 +115,7 @@ struct MenuView: View {
                         }
                     } label: {
                         Spacer()
-                        Image(systemName: "ellipsis")
+                        Text("Click for more")
                             .foregroundColor(.white)
                             .padding()
                             .padding(.horizontal) // Reduce horizontal padding
@@ -125,7 +123,7 @@ struct MenuView: View {
                             .font(.headline)
                             .frame(maxWidth:.infinity)
                             .frame(height: 40)
-                            .background(.gray)
+                            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
                             .foregroundStyle(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                             .padding(.horizontal)
@@ -169,7 +167,7 @@ struct MenuView: View {
                                             .font(.body)
                                             .padding(.bottom, 5)
                                     }
-                                    .background(Color.black)
+                                    .background(Color(red: 28/255, green: 28/255, blue: 38/255))
                                     .cornerRadius(8)
                                     .padding()
                                 }

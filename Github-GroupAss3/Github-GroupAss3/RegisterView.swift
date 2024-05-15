@@ -12,14 +12,15 @@ struct RegisterView: View {
     
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+            Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
             VStack {
+                Spacer()
                 registerHeader
                 inputFields
                 registerButton
+                Spacer()
             }
             .padding()
-            .background(Color.gray.opacity(0.8))
             .cornerRadius(16)
             .padding()
         }
@@ -106,7 +107,7 @@ struct RegisterView: View {
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.blue)
+        .background(Color(red: 237/255, green: 49/255, blue: 140/255))
         .cornerRadius(8)
         .padding()
         .disabled(!viewModel.isFormValid())

@@ -11,14 +11,13 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color(red: 28/255, green: 28/255, blue: 38/255).edgesIgnoringSafeArea(.all)
                 VStack {
                     loginHeader
                     inputFields
                     loginButton
                 }
                 .padding()
-                .background(Color.gray.opacity(0.8))
                 .cornerRadius(16)
                 .padding()
             }
@@ -32,7 +31,7 @@ struct LoginView: View {
 
     var loginHeader: some View {
         Text("Login")
-            .font(.title)
+            .font(.largeTitle)
             .fontWeight(.bold)
             .foregroundColor(.white)
             .padding()
@@ -43,11 +42,14 @@ struct LoginView: View {
             TextField("Username", text: $viewModel.username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .foregroundColor(Color(red: 184/255, green: 49/255, blue: 115/255))
+                
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .foregroundColor(Color(red: 184/255, green: 49/255, blue: 115/255))
+                
         }
-        .background(Color.white)
         .cornerRadius(8)
         .padding(.horizontal)
     }
@@ -55,7 +57,7 @@ struct LoginView: View {
     var loginButton: some View {
         HStack {
             Spacer()
-            Button("Login") {
+            Button("Login    ") {
                 viewModel.login()
             }
             .alert(isPresented: $viewModel.loginFailed) {
@@ -63,7 +65,7 @@ struct LoginView: View {
             }
             .padding()
             .foregroundColor(.white)
-            .background(Color.blue)
+            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
             .cornerRadius(8)
             .padding()
             Spacer()
@@ -73,7 +75,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .padding()
             }
-            .background(Color.blue)
+            .background(Color(red: 237/255, green: 49/255, blue: 140/255))
             .cornerRadius(8)
 
             Spacer()
