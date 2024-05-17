@@ -75,7 +75,7 @@ struct HeaderView: View {
                 Button("Manage") {
                     isManageViewPresented.toggle()
                 }
-                .padding(.horizontal) // Reduce horizontal padding
+                .padding(.horizontal)
                 .cornerRadius(8)
                 .font(.headline)
                 .frame(maxWidth: 200)
@@ -85,7 +85,7 @@ struct HeaderView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .padding(.horizontal)
                 .sheet(isPresented: $isManageViewPresented) {
-                    // ManageView()
+                    ManageView()
                 }
             }
         }

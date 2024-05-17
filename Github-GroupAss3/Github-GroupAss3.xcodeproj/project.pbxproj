@@ -48,6 +48,10 @@
 		C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */; };
 		C99BD1DF2BF2546300BDCF13 /* MovieInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1DE2BF2546300BDCF13 /* MovieInfoViewModel.swift */; };
 		C99BD1E12BF254AF00BDCF13 /* MovieInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1E02BF254AF00BDCF13 /* MovieInfoView.swift */; };
+		C9A7391B2BF7242500CA408E /* ManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7391A2BF7242500CA408E /* ManageView.swift */; };
+		C9A7391D2BF7244F00CA408E /* ManageMovieEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7391C2BF7244F00CA408E /* ManageMovieEditView.swift */; };
+		C9A7391F2BF7246800CA408E /* ManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7391E2BF7246800CA408E /* ManageViewModel.swift */; };
+		C9A739212BF7248B00CA408E /* ManageMovieEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A739202BF7248B00CA408E /* ManageMovieEditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		C99BD1DC2BF24A0800BDCF13 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewModel.swift; path = "Preview Content/EventViewModel.swift"; sourceTree = "<group>"; };
 		C99BD1DE2BF2546300BDCF13 /* MovieInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewModel.swift; sourceTree = "<group>"; };
 		C99BD1E02BF254AF00BDCF13 /* MovieInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoView.swift; sourceTree = "<group>"; };
+		C9A7391A2BF7242500CA408E /* ManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageView.swift; sourceTree = "<group>"; };
+		C9A7391C2BF7244F00CA408E /* ManageMovieEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMovieEditView.swift; sourceTree = "<group>"; };
+		C9A7391E2BF7246800CA408E /* ManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewModel.swift; sourceTree = "<group>"; };
+		C9A739202BF7248B00CA408E /* ManageMovieEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMovieEditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,10 @@
 				AC0016B72BF0921D0081B48E /* ProfileViewModel.swift */,
 				AC0016B92BF096BA0081B48E /* ProfileEditView.swift */,
 				AC0016BB2BF096D40081B48E /* ProfileEditViewModel.swift */,
+				C9A7391A2BF7242500CA408E /* ManageView.swift */,
+				C9A7391E2BF7246800CA408E /* ManageViewModel.swift */,
+				C9A7391C2BF7244F00CA408E /* ManageMovieEditView.swift */,
+				C9A739202BF7248B00CA408E /* ManageMovieEditViewModel.swift */,
 				AC385D592BEF31BF00BED627 /* AboutUsView.swift */,
 				AC0016B52BF08FCC0081B48E /* UserSettingModel.swift */,
 			);
@@ -378,10 +390,13 @@
 				AC0016BA2BF096BA0081B48E /* ProfileEditView.swift in Sources */,
 				AC0016B22BF062170081B48E /* ProfileView.swift in Sources */,
 				AC385D582BED1A0900BED627 /* RegisterViewModel.swift in Sources */,
+				C9A7391D2BF7244F00CA408E /* ManageMovieEditView.swift in Sources */,
+				C9A739212BF7248B00CA408E /* ManageMovieEditViewModel.swift in Sources */,
 				AC0016BC2BF096D40081B48E /* ProfileEditViewModel.swift in Sources */,
 				AC385D562BED192100BED627 /* RegisterView.swift in Sources */,
 				AC0016B42BF08AA10081B48E /* MenuViewModel.swift in Sources */,
 				2CFD70F22BF29E62003C2D3D /* SeatsViewModel.swift in Sources */,
+				C9A7391B2BF7242500CA408E /* ManageView.swift in Sources */,
 				AC385D522BECF9C400BED627 /* MenuView.swift in Sources */,
 				AC0016B62BF08FCC0081B48E /* UserSettingModel.swift in Sources */,
 				84EC5E742BF0B3C700FC1577 /* AfterBookViewModel.swift in Sources */,
@@ -394,6 +409,7 @@
 				2CFD70F02BF29E4F003C2D3D /* SeatsView.swift in Sources */,
 				AC385D712BF0440600BED627 /* LoginViewModel.swift in Sources */,
 				84EC5E702BF0AC1700FC1577 /* BookView.swift in Sources */,
+				C9A7391F2BF7246800CA408E /* ManageViewModel.swift in Sources */,
 				C99BD1DD2BF24A0800BDCF13 /* EventViewModel.swift in Sources */,
 				C99BD1DB2BF249EE00BDCF13 /* EventView.swift in Sources */,
 			);
