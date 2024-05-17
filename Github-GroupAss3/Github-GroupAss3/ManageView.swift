@@ -44,10 +44,10 @@ struct ManageView: View {
                 NavigationLink(destination: ManageMovieEditView(movie: movie)) {
                     HStack {
                         Text(movie.title)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         Spacer()
                         Text("Seats: \(movie.seatCount)")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     }
                     .padding()
                 }
