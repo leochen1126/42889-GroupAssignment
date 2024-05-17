@@ -157,7 +157,7 @@ struct DisclosureGroupView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .padding(.horizontal)
         }
-        .padding(.bottom) // Add bottom padding
+        .padding(.bottom)
     }
 }
 
@@ -214,8 +214,6 @@ struct MovieCard: View {
         .padding()
     }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

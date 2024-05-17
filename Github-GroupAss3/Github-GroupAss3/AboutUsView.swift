@@ -25,7 +25,7 @@ struct AboutUsView: View {
 
     private var mapView: some View {
         MapView(coordinate: utsBuilding2Coordinate)
-            .frame(height: 350) // Adjust the map height as needed
+            .frame(height: 350) 
             .padding()
             .clipShape(Rectangle())
     }

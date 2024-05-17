@@ -60,7 +60,7 @@ struct ProfileView: View {
     var actionButtons: some View {
         HStack {
             Spacer()
-            //Go to edit personall data
+            //Go to edit personal data
             NavigationLink(destination: ProfileEditView()) {
                 Text("Edit     ")
                     .foregroundColor(.white)

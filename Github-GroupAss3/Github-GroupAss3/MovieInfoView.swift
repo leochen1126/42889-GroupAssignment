@@ -73,5 +73,3 @@ struct MovieInfoView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-
-

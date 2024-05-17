@@ -12,4 +12,3 @@ struct Event {
     var description: String
     var imageName: String  
 }
-

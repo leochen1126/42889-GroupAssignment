@@ -56,7 +56,6 @@ struct BookView: View {
                 }
             }
 
-
             // Movie details
             Text("Details: \(viewModel.movie.details)")
                 .foregroundColor(.white)
@@ -70,7 +69,6 @@ struct BookView: View {
     }
 }
 
-
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
         let movie = Movie(id: "1", title: "Kingdom of the Planet of the Apes", details: "Director Wes Ball breathes new life into the global, epic franchise set several generations in the future following Caesar's reign, in which apes are the dominant species living harmoniously and humans have been reduced to living in the shadows. As a new tyrannical ape leader builds his empire, one young ape undertakes a harrowing journey that will cause him to question all that he has known about the past and to make choices that will define a future for apes and humans alike.", imageUrl: "sample-url", seatCount: 49)
@@ -79,4 +77,3 @@ struct BookView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-

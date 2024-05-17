@@ -25,7 +25,6 @@ class Movie: Identifiable {
     }
 }
 
-
 class MenuViewModel: ObservableObject {
     @Published var username: String = "Login"
     @Published var movies: [Movie] = []

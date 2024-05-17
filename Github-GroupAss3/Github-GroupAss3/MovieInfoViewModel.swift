@@ -63,4 +63,3 @@ class MovieInfoViewModel: ObservableObject {
         task.resume()
     }
 }
-
