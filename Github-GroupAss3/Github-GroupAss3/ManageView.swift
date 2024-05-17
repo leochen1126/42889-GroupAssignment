@@ -21,6 +21,7 @@ struct ManageView: View {
                     Spacer()
                 }
                 .padding()
+                .background(Color(red: 38/255, green: 33/255, blue: 52/255).opacity(0.8))
                 .cornerRadius(16)
                 .padding()
             }
@@ -44,16 +45,20 @@ struct ManageView: View {
                 NavigationLink(destination: ManageMovieEditView(movie: movie)) {
                     HStack {
                         Text(movie.title)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                         Spacer()
                         Text("Seats: \(movie.seatCount)")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     }
                     .padding()
+                    .background(Color(red: 38/255, green: 33/255, blue: 52/255).opacity(0.8))
+                    .cornerRadius(8)
                 }
+                .listRowBackground(Color.clear)
             }
         }
-        .background(Color.clear)
+        .background(Color.black)
+        .scrollContentBackground(.hidden)
     }
 }
 

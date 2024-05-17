@@ -31,7 +31,7 @@ struct ManageMovieEditView: View {
     }
     
     var editHeader: some View {
-        Text("Edit Movie")
+        Text("Edit Movie Details")
             .font(.title)
             .fontWeight(.bold)
             .foregroundColor(.white)
@@ -107,7 +107,7 @@ struct ManageMovieEditView: View {
 
 struct ManageMovieEditView_Previews: PreviewProvider {
     static var previews: some View {
-        let movie = Movie(id: "1", title: "Sample Movie", details: "Sample Details", imageUrl: "sample-url", seatCount: 100)
+        let movie = Movie(id: "1", title: "Sample Movie", details: "Sample Details", imageUrl: "Sample Url", seatCount: 100)
         return ManageMovieEditView(movie: movie)
     }
 }
