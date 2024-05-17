@@ -55,7 +55,7 @@ struct HeaderView: View {
                     isLoginViewPresented.toggle()
                 }
             }
-            .padding(.horizontal) // Reduce horizontal padding
+            .padding(.horizontal) 
             .cornerRadius(8)
             .font(.headline)
             .frame(maxWidth: 100)
@@ -75,7 +75,7 @@ struct HeaderView: View {
                 Button("Manage") {
                     isManageViewPresented.toggle()
                 }
-                .padding(.horizontal) // Reduce horizontal padding
+                .padding(.horizontal)
                 .cornerRadius(8)
                 .font(.headline)
                 .frame(maxWidth: 200)
@@ -85,7 +85,7 @@ struct HeaderView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .padding(.horizontal)
                 .sheet(isPresented: $isManageViewPresented) {
-                    // ManageView()
+                    ManageView()
                 }
             }
         }
@@ -148,7 +148,7 @@ struct DisclosureGroupView: View {
             Text("Click for more")
                 .foregroundColor(.white)
                 .padding()
-                .padding(.horizontal) // Reduce horizontal padding
+                .padding(.horizontal)
                 .cornerRadius(8)
                 .font(.headline)
                 .frame(maxWidth: .infinity)
