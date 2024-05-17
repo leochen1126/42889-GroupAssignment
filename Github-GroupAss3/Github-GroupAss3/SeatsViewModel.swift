@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseCore
 import FirebaseFirestore
 
 struct Seat: Identifiable, Equatable {
@@ -19,8 +20,10 @@ struct Seat: Identifiable, Equatable {
 class SeatsViewModel: ObservableObject {
     @Published var seats = [Seat]()
     private var db = Firestore.firestore()
+    private var movieTitle: String
     
-    init() {
+    init(movieTitle: String) {
+        self.movieTitle = movieTitle
         setupSeats()
         fetchSeats()
         self.seats = (65...69).flatMap { row -> [Seat] in
@@ -40,7 +43,7 @@ class SeatsViewModel: ObservableObject {
         }
     
     func fetchSeats() {
-            db.collection("seats").addSnapshotListener { querySnapshot, error in
+        db.collection("movie_book").document(movieTitle).collection("seats").addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error?.localizedDescription ?? "Unknown error")")
                     return
@@ -59,8 +62,8 @@ class SeatsViewModel: ObservableObject {
     
     func selectSeat(_ seat: Seat) {
         guard let index = seats.firstIndex(where: { $0.id == seat.id }) else { return }
-        seats[index].isOccupied.toggle()
-        updateSeatAvailability(seat: seats[index], isOccupied: seats[index].isOccupied)
+   //     seats[index].isOccupied.toggle()
+   //     updateSeatAvailability(seat: seats[index], isOccupied: seats[index].isOccupied)
        
         if seats[index].isSelected || (selectedSeatsCount < 6 && !seats[index].isSelected) {
                 seats[index].isSelected.toggle()
@@ -76,9 +79,13 @@ class SeatsViewModel: ObservableObject {
     private func updateSeatAvailability(seat: Seat, isOccupied: Bool) {
         guard let index = seats.firstIndex(where: { $0.id == seat.id }) else { return }
         seats[index].isOccupied = isOccupied
-        db.collection("seats").document(seat.id).updateData([
-            "isOccupied": isOccupied
-        ]) { err in
+        let seatData: [String: Any] = [
+                    "row": String(seat.row),
+                    "number": seat.number,
+                    "isOccupied": isOccupied
+        ]
+        
+        db.collection("movie_book").document(movieTitle).collection("seats").document(seat.id).setData(seatData) { err in
             if let err = err {
                 print("Error updating seat: \(err)")
             } else {

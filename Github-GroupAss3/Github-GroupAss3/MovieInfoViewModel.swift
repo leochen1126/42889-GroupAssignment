@@ -27,6 +27,7 @@ class MovieInfoViewModel: ObservableObject {
         self.movie = movie
     }
     
+    //This part specifically uses an API called from third-person to showcase the ability for it
     func fetchOMDBDetails() {
         guard let encodedTitle = movie.title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: "https://www.omdbapi.com/?t=\(encodedTitle)&apikey=6f79e75f") else {

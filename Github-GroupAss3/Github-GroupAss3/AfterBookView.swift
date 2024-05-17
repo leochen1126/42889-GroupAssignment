@@ -12,14 +12,13 @@ struct AfterBookView: View {
         self.viewModel = viewModel
     } //seats
     @ObservedObject var viewModel: AfterBookViewModel
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
+    @State private var userName: String = ""
     @State private var phone: String = ""
     @State private var email: String = ""
     @State private var isShowingActionSheet = false
     @Environment(\.presentationMode) var presentationMode
 
-    private var seatsViewModel = SeatsViewModel()   //seats
+    private var seatsViewModel = SeatsViewModel(movieTitle: "Sample Movie Title")   //seats
     
     var body: some View {
         NavigationView {
@@ -30,11 +29,7 @@ struct AfterBookView: View {
                     .padding()
 
                 SeatsView(viewModel: seatsViewModel)    //seats
-                TextField("First Name", text: $firstName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                
-                TextField("Last Name", text: $lastName)
+                TextField("Name", text: $userName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
@@ -52,7 +47,7 @@ struct AfterBookView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         seatsViewModel.confirmBooking() //seats
                         // Upload booking details to database
-                        viewModel.uploadBookingDetails(firstName: firstName, lastName: lastName, email: email, movieTitle: viewModel.movieTitle)
+                        viewModel.uploadBookingDetails(userName: userName, phone: phone, email: email, movieTitle: viewModel.movieTitle)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }) {
