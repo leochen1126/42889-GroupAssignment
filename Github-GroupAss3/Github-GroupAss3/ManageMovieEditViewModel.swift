@@ -66,11 +66,11 @@ class ManageMovieEditViewModel: ObservableObject {
             
             db.collection("movie_master").document(movieId).updateData(movieData) { error in
                 if let error = error {
-                    print("Error updating document: \(error)")
+                    print("Error updating info: \(error)")
                     self.showAlert = true
                     self.updateSuccessful = false
                 } else {
-                    print("Document successfully updated")
+                    print("Movie info successfully updated")
                     self.showAlert = true
                     self.updateSuccessful = true
                     DispatchQueue.main.async {
@@ -79,7 +79,7 @@ class ManageMovieEditViewModel: ObservableObject {
                 }
             }
         } else {
-            print("Form is not valid")
+            print("Invalid user input")
             self.showAlert = true
             self.updateSuccessful = false
         }

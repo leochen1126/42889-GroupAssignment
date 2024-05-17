@@ -15,7 +15,7 @@ class ManageViewModel: ObservableObject {
     func fetchMovies() {
         db.collection("movie_master").getDocuments { querySnapshot, error in
             if let error = error {
-                print("Error getting documents: \(error)")
+                print("Error getting info: \(error)")
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
