@@ -130,7 +130,7 @@ struct DisclosureGroupView: View {
                 .sheet(isPresented: $isEventViewPresented) {
                     EventView()
                 }
-                
+                 
                 Button(action: {
                     isAboutUsViewPresented.toggle()
                 }) {

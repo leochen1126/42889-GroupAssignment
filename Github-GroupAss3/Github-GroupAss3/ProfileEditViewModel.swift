@@ -23,9 +23,6 @@ class ProfileEditViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var updateSuccessful = false
     // Validation functions
-    func isValidUsername() -> Bool {
-        return !username.isEmpty
-    }
     
     func isValidEmail() -> Bool {
         // Regular expression for validating email address
@@ -35,7 +32,7 @@ class ProfileEditViewModel: ObservableObject {
     }
     
     func isValidPhoneNumber() -> Bool {
-        return phoneNumber.count >= 7
+        return !phoneNumber.isEmpty
     }
     
     func isValidAddress() -> Bool {
@@ -57,10 +54,10 @@ class ProfileEditViewModel: ObservableObject {
             let userData: [String: Any] = [
                 "userName": username,
                 "email": email,
-                "phoneNumber": phoneNumber,
-                "address": address
+                "address": address,
+                "phone": phoneNumber,
             ]
-            
+            print(phoneNumber)
             // Query the collection for the document with the matching username
             userCollection.whereField("userName", isEqualTo: username).getDocuments { (querySnapshot, error) in
                 if let error = error {
@@ -77,6 +74,7 @@ class ProfileEditViewModel: ObservableObject {
                                 self.updateSuccessful = false
                             } else {
                                 print("Document successfully updated")
+                                print(self.phoneNumber)
                                 self.showAlert = true
                                 self.updateSuccessful = true
                                 DispatchQueue.main.async {
