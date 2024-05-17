@@ -134,7 +134,7 @@ struct DisclosureGroupView: View {
                 Button(action: {
                     isAboutUsViewPresented.toggle()
                 }) {
-                    Text("About us")
+                    Text("About Us")
                         .foregroundColor(.white)
                         .padding()
                 }

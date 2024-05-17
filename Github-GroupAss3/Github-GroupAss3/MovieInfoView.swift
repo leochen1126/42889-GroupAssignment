@@ -66,7 +66,7 @@ struct MovieInfoView: View {
 
 struct MovieInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        let movie = Movie(id: "1", title: "Kingdom of the Planet of the Apes", details: "", imageUrl: "", seatCount: 30)
+        let movie = Movie(id: "1", title: "Kingdom of the Planet of the Apes", details: "", imageUrl: "", seatCount: 50)
         let viewModel = MovieInfoViewModel(movie: movie)
         
         return MovieInfoView(viewModel: viewModel)

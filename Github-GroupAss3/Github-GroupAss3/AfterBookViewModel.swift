@@ -17,11 +17,11 @@ class AfterBookViewModel: ObservableObject {
         self.movieTitle = movieTitle
     }
 
-    func uploadBookingDetails(firstName: String, lastName: String, email: String, movieTitle: String) {
+    func uploadBookingDetails(userName: String, phone: String, email: String, movieTitle: String) {
         // Upload booking details to database
         let bookingDetails = [
-            "firstName": firstName,
-            "lastName": lastName,
+            "name": userName,
+            "phone": phone,
             "email": email,
             "movieTitle": movieTitle,
         ]

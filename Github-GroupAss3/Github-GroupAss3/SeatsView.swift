@@ -14,10 +14,19 @@ struct SeatButton: View {
         Button(action: action) {
             Text("\(seat.row)\(seat.number)")
                 .frame(width: 30, height: 30)
-                .background(seat.isOccupied ? Color.gray : Color.green)
+                .background(seatColor(seat))
                 .cornerRadius(5)
                 .foregroundColor(.white)
         }
+    }
+    
+    private func seatColor(_ seat: Seat) -> Color {
+        if seat.isOccupied {
+            return .gray
+        } else if seat.isSelected {
+            return .blue
+        }
+        return .green
     }
 }
 
@@ -58,22 +67,22 @@ struct SeatsView: View {
         .foregroundColor(.white)
     }
 
-    private func colorForSeat(row: Character, number: Int) -> Color {
-        if let seat = viewModel.seats.first(where: { $0.row == row && $0.number == number }) {
-            if seat.isOccupied {
-                return .gray
-            } else if seat.isSelected {
-                return .blue
-            }
-            return .green
-        }
-        return .green
-    }
+//    private func colorForSeat(row: Character, number: Int) -> Color {
+//        if let seat = viewModel.seats.first(where: { $0.row == row && $0.number == number }) {
+//            if seat.isOccupied {
+//                return .gray
+//            } else if seat.isSelected {
+//                return .blue
+//            }
+//            return .green
+//        }
+//        return .green
+//    }
 }
 
 struct SeatsView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = SeatsViewModel()
+        let viewModel = SeatsViewModel(movieTitle: "Sample Movie Title")
         return SeatsView(viewModel: viewModel)
             .previewLayout(.sizeThatFits)
     }
